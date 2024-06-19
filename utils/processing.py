@@ -21,10 +21,8 @@ def resample_date_period(
     empty_df = pd.DataFrame()
     empty_df["START_TIME"] = pd.date_range(date_from, date_to, freq="H")
     empty_df[value_column] = 0
-    return empty_df.append(
-        df,
-        ignore_index=True,
-    )
+    result_df = pd.concat([empty_df, df], ignore_index=True)
+    return result_df
 
 
 @st.cache_data
