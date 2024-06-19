@@ -137,6 +137,7 @@ def main():
     selected_warehouse = st.selectbox(
         "Choose warehouse",
         warehouses.tolist(),
+        key='selectbox_target_warehouse'
     )
 
     # Filter accordingly

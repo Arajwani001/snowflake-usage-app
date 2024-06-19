@@ -36,9 +36,10 @@ def main():
     # Add filtering widget
     all_values = df["TARGET_REGION"].unique().tolist()
     selected_value = st.selectbox(
-        "Choose target region",
-        ["All"] + all_values,
-        0,
+    "Choose target region",
+    ["All"] + all_values,
+    index=0,  # Default selected option
+    key='selectbox_target_region'  # Unique key
     )
 
     if selected_value == "All":
